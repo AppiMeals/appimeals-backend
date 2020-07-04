@@ -23,6 +23,7 @@ service: appimeals-backend
 provider:
   name: aws
   runtime: nodejs12.x
+  region: eu-west-2
 
 # you can overwrite defaults here
 #  stage: dev
@@ -58,8 +59,9 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  recipes:
+    handler: recipes.handler
+    
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
