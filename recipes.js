@@ -16,12 +16,8 @@ app.use(bodyParser.json());
 //   database: "recipes"
 // });
 
-module.exports.handler = async (event, context) => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: "Go Serverless v1.0! Your function executed successfully!",
-      input: event
-    })
-  };
-};
+app.get("/browse-recipes", function(req, res) {
+  res.send({ recipe: ["burned chicken", "fish of chips", "steamed oats"] });
+});
+
+module.exports.handler = serverless(app);

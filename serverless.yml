@@ -61,23 +61,23 @@ provider:
 functions:
   recipes:
     handler: recipes.handler
-
-    - http:
-        path: recipes
-        method: get
-        cors: true
-    - http:
-        path: recipes/{recipeId}
-        method: delete
-        cors: true
+    events:
       - http:
-        path: tasks
-        method: post
-        cors: true
+          path: browse-recipes
+          method: get
+          cors: true
       - http:
-        path: recipes/{recipeId}
-        method: put
-        cors: true
+          path: browse-recipes/{recipeId}
+          method: delete
+          cors: true
+      - http:
+          path: browse-recipes
+          method: post
+          cors: true
+      - http:
+          path: browse-recipes/{recipeId}
+          method: put
+          cors: true
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
