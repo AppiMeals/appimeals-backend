@@ -1,0 +1,638 @@
+{
+  "canvas": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 46,
+    "scrollLeft": 0,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": true,
+      "columnPrimaryKey": true,
+      "columnUnique": true,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "appiMeals",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    }
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "users",
+        "comment": "Table of users",
+        "columns": [
+          {
+            "name": "user_dbid",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": true,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "0f9c019f-c01f-3b8d-1606-39b1f631f966"
+          },
+          {
+            "name": "firstName",
+            "comment": "",
+            "dataType": "VARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 88,
+              "widthDefault": 60
+            },
+            "id": "0cf0715d-f133-b52b-0145-4a32e380957d"
+          },
+          {
+            "name": "surname",
+            "comment": "",
+            "dataType": "VARCHAR(20)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 88,
+              "widthDefault": 60
+            },
+            "id": "2c16a55d-e4eb-83b9-85b3-1938478380de"
+          },
+          {
+            "name": "email",
+            "comment": "",
+            "dataType": "VARCHAR(36)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 88,
+              "widthDefault": 60
+            },
+            "id": "0fc3ec1a-c449-c4b6-7558-3541759d9f30"
+          },
+          {
+            "name": "password",
+            "comment": "",
+            "dataType": "VARCHAR(36)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": true,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 88,
+              "widthDefault": 60
+            },
+            "id": "f326bcff-1ec5-9c8e-c835-fe5dffcd660a"
+          },
+          {
+            "name": "facebook",
+            "comment": "OATH Facebook identifier",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 151,
+              "widthDataType": 65,
+              "widthDefault": 60
+            },
+            "id": "1813401a-bf28-f8f8-8fb5-bf638b6cf686"
+          },
+          {
+            "name": "twitter",
+            "comment": "OATH Twitter identifier",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 132,
+              "widthDataType": 65,
+              "widthDefault": 60
+            },
+            "id": "f5a8c1b9-9c8d-1dcc-367d-a7b33fa8bab2"
+          },
+          {
+            "name": "google",
+            "comment": "OATH Google identifer",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 133,
+              "widthDataType": 65,
+              "widthDefault": 60
+            },
+            "id": "c1794172-f387-4954-56cd-3c77ff56b2cf"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 168,
+          "top": 210,
+          "zIndex": 446,
+          "widthName": 60,
+          "widthComment": 83
+        },
+        "id": "6c252f2b-4072-b68f-ab67-b1e5efa42f2d"
+      },
+      {
+        "name": "mealSelections",
+        "comment": "Table that holds user's next 7 Meal Selections",
+        "columns": [
+          {
+            "name": "myMeals_dbid",
+            "comment": "DBID for the selection",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 86,
+              "widthComment": 128,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "15a67c27-50d0-441e-b96d-9cefb1394f5f"
+          },
+          {
+            "name": "user_dbid",
+            "comment": "Foreign Key to User's Table",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 161,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "51b6431f-c95d-97a7-ff46-3fb840f457fe"
+          },
+          {
+            "name": "mealsString",
+            "comment": "Comma spearated string that represents the recipe DBID from Spoonacular, max 7 meals",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71,
+              "widthComment": 516,
+              "widthDataType": 65,
+              "widthDefault": 60
+            },
+            "id": "43270920-c6f1-f924-33a5-448e0e3d1921"
+          }
+        ],
+        "ui": {
+          "active": true,
+          "left": 937,
+          "top": 170,
+          "zIndex": 516,
+          "widthName": 90,
+          "widthComment": 265
+        },
+        "id": "21c3f9b9-0466-8715-e5ea-cf915edb59f3"
+      },
+      {
+        "name": "favourites",
+        "comment": "Table that keeps a tally of favourites linked to user",
+        "columns": [
+          {
+            "name": "favourite_dbid",
+            "comment": "DBID for the favourited item",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 84,
+              "widthComment": 162,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "95f0d153-6f48-2c60-f78e-cf9a36dce79e"
+          },
+          {
+            "name": "user_dbid",
+            "comment": "Foreign Key to Users Table",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": true,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 159,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "76d5f0c4-f38b-c6d3-b533-e07094f0644c"
+          },
+          {
+            "name": "recipe_id",
+            "comment": "Links to the Recipe ID in Spoonacular",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 220,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "f9c09f0e-96e8-affb-2291-1332b84b8baa"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 135,
+          "top": 638,
+          "zIndex": 491,
+          "widthName": 60,
+          "widthComment": 290
+        },
+        "id": "ebe66b9f-2693-8c6c-7ff9-43679140b0fc"
+      },
+      {
+        "name": "mealPreferences",
+        "comment": "Contains the User's diet preferences and allergies",
+        "columns": [
+          {
+            "name": "pref_dbid",
+            "comment": "DBID for the user's meal preferences",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 215,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "e49ca505-0584-3365-527b-17a5f1910fd2"
+          },
+          {
+            "name": "user_dbid",
+            "comment": "Foreign Key to Users Table",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": true,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 159,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "1934f83a-bd95-fb13-5495-4ca3d63a4533"
+          },
+          {
+            "name": "diet",
+            "comment": "Comma separated string with key-words used from Spoonacular API that describe's user's dietary preferences",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 636,
+              "widthDataType": 65,
+              "widthDefault": 60
+            },
+            "id": "1747b896-7b27-9026-8cda-233dd5c55262"
+          },
+          {
+            "name": "exclusions",
+            "comment": "Comma separated string with key-words used from Spponacular API that describe's user's allergies/Exclusions",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 63,
+              "widthComment": 639,
+              "widthDataType": 65,
+              "widthDefault": 60
+            },
+            "id": "ff1e2a16-ef4e-fbfe-89fb-b8fea0b9775a"
+          },
+          {
+            "name": "calories_min",
+            "comment": "User's preferred Calories minimum",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75,
+              "widthComment": 202,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "d61fe9cf-ab5a-8773-580a-44b385f5b872"
+          },
+          {
+            "name": "calories_max",
+            "comment": "User's preferered Calories maximum",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 79,
+              "widthComment": 213,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c74f71fe-a19e-2e99-c07b-50bd58705b60"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 982,
+          "top": 463,
+          "zIndex": 489,
+          "widthName": 100,
+          "widthComment": 289
+        },
+        "id": "c13368eb-7e98-fff9-cd80-08815cdbd8c4"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": [
+      {
+        "identification": false,
+        "start": {
+          "tableId": "6c252f2b-4072-b68f-ab67-b1e5efa42f2d",
+          "columnIds": [
+            "0f9c019f-c01f-3b8d-1606-39b1f631f966"
+          ],
+          "x": 681,
+          "y": 268.25,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "21c3f9b9-0466-8715-e5ea-cf915edb59f3",
+          "columnIds": [
+            "51b6431f-c95d-97a7-ff46-3fb840f457fe"
+          ],
+          "x": 937,
+          "y": 235.25,
+          "direction": "left"
+        },
+        "id": "58fc09e1-5bbb-6b09-b7b4-02b881dfd978",
+        "relationshipType": "One"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "6c252f2b-4072-b68f-ab67-b1e5efa42f2d",
+          "columnIds": [
+            "0f9c019f-c01f-3b8d-1606-39b1f631f966"
+          ],
+          "x": 424.5,
+          "y": 443,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "ebe66b9f-2693-8c6c-7ff9-43679140b0fc",
+          "columnIds": [
+            "76d5f0c4-f38b-c6d3-b533-e07094f0644c"
+          ],
+          "x": 424,
+          "y": 638,
+          "direction": "top"
+        },
+        "id": "fb583d53-c967-5423-aed1-8f0fa97d16ff",
+        "relationshipType": "OneN"
+      },
+      {
+        "identification": false,
+        "start": {
+          "tableId": "6c252f2b-4072-b68f-ab67-b1e5efa42f2d",
+          "columnIds": [
+            "0f9c019f-c01f-3b8d-1606-39b1f631f966"
+          ],
+          "x": 681,
+          "y": 384.75,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "c13368eb-7e98-fff9-cd80-08815cdbd8c4",
+          "columnIds": [
+            "1934f83a-bd95-fb13-5495-4ca3d63a4533"
+          ],
+          "x": 982,
+          "y": 559,
+          "direction": "left"
+        },
+        "id": "1108b07b-d159-a51f-e427-32bc7b87b9a1",
+        "relationshipType": "OneN"
+      }
+    ]
+  }
+}
