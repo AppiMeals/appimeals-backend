@@ -157,7 +157,7 @@
           },
           {
             "name": "facebook",
-            "comment": "OATH Facebook identifier",
+            "comment": "This may be depreciated for now as non-MVP / OAUTH Facebook identifier",
             "dataType": "VARCHAR",
             "default": "",
             "option": {
@@ -172,7 +172,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 151,
+              "widthComment": 436,
               "widthDataType": 65,
               "widthDefault": 60
             },
@@ -180,7 +180,7 @@
           },
           {
             "name": "twitter",
-            "comment": "OATH Twitter identifier",
+            "comment": "This may be depreciated for now as non-MVP / OAUTH Twitter identifier",
             "dataType": "VARCHAR",
             "default": "",
             "option": {
@@ -195,7 +195,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 132,
+              "widthComment": 417,
               "widthDataType": 65,
               "widthDefault": 60
             },
@@ -203,7 +203,7 @@
           },
           {
             "name": "google",
-            "comment": "OATH Google identifer",
+            "comment": "This may be deprecireted for now as non-MVP / OAUTH Google identifer",
             "dataType": "VARCHAR",
             "default": "",
             "option": {
@@ -218,7 +218,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 133,
+              "widthComment": 422,
               "widthDataType": 65,
               "widthDefault": 60
             },
@@ -227,9 +227,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 168,
-          "top": 210,
-          "zIndex": 446,
+          "left": 47,
+          "top": 130,
+          "zIndex": 536,
           "widthName": 60,
           "widthComment": 83
         },
@@ -270,7 +270,7 @@
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
-              "unique": false,
+              "unique": true,
               "notNull": false
             },
             "ui": {
@@ -310,10 +310,10 @@
           }
         ],
         "ui": {
-          "active": true,
-          "left": 937,
-          "top": 170,
-          "zIndex": 516,
+          "active": false,
+          "left": 1074,
+          "top": 143,
+          "zIndex": 537,
           "widthName": 90,
           "widthComment": 265
         },
@@ -394,10 +394,10 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 135,
-          "top": 638,
-          "zIndex": 491,
+          "active": true,
+          "left": 226,
+          "top": 574,
+          "zIndex": 539,
           "widthName": 60,
           "widthComment": 290
         },
@@ -548,9 +548,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 982,
-          "top": 463,
-          "zIndex": 489,
+          "left": 999,
+          "top": 451,
+          "zIndex": 538,
           "widthName": 100,
           "widthComment": 289
         },
@@ -571,8 +571,8 @@
           "columnIds": [
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
-          "x": 681,
-          "y": 268.25,
+          "x": 845,
+          "y": 188.25,
           "direction": "right"
         },
         "end": {
@@ -580,8 +580,8 @@
           "columnIds": [
             "51b6431f-c95d-97a7-ff46-3fb840f457fe"
           ],
-          "x": 937,
-          "y": 235.25,
+          "x": 1074,
+          "y": 208.25,
           "direction": "left"
         },
         "id": "58fc09e1-5bbb-6b09-b7b4-02b881dfd978",
@@ -594,8 +594,8 @@
           "columnIds": [
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
-          "x": 424.5,
-          "y": 443,
+          "x": 446,
+          "y": 363,
           "direction": "bottom"
         },
         "end": {
@@ -603,8 +603,8 @@
           "columnIds": [
             "76d5f0c4-f38b-c6d3-b533-e07094f0644c"
           ],
-          "x": 424,
-          "y": 638,
+          "x": 515,
+          "y": 574,
           "direction": "top"
         },
         "id": "fb583d53-c967-5423-aed1-8f0fa97d16ff",
@@ -617,8 +617,8 @@
           "columnIds": [
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
-          "x": 681,
-          "y": 384.75,
+          "x": 845,
+          "y": 304.75,
           "direction": "right"
         },
         "end": {
@@ -626,8 +626,8 @@
           "columnIds": [
             "1934f83a-bd95-fb13-5495-4ca3d63a4533"
           ],
-          "x": 982,
-          "y": 559,
+          "x": 999,
+          "y": 547,
           "direction": "left"
         },
         "id": "1108b07b-d159-a51f-e427-32bc7b87b9a1",
