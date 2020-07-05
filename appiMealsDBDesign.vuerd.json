@@ -223,13 +223,36 @@
               "widthDefault": 60
             },
             "id": "c1794172-f387-4954-56cd-3c77ff56b2cf"
+          },
+          {
+            "name": "status",
+            "comment": "Is this an 'active' account or has it been 'deleted'?  GDPR considerations.",
+            "dataType": "BOOLEAN",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 419,
+              "widthDataType": 65,
+              "widthDefault": 60
+            },
+            "id": "3b10a77c-ebee-12fa-8627-6bc75d2b3d1f"
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 47,
           "top": 130,
-          "zIndex": 536,
+          "zIndex": 557,
           "widthName": 60,
           "widthComment": 83
         },
@@ -394,7 +417,7 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 226,
           "top": 574,
           "zIndex": 539,
@@ -572,7 +595,7 @@
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
           "x": 845,
-          "y": 188.25,
+          "y": 193.375,
           "direction": "right"
         },
         "end": {
@@ -595,7 +618,7 @@
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
           "x": 446,
-          "y": 363,
+          "y": 383.5,
           "direction": "bottom"
         },
         "end": {
@@ -618,7 +641,7 @@
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
           "x": 845,
-          "y": 304.75,
+          "y": 320.125,
           "direction": "right"
         },
         "end": {

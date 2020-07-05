@@ -59,6 +59,24 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
+  user-registration:
+    handler: user-registration.handler
+    events:
+      ###In the event we depend on user-registration to report back account creation
+      # -http:
+      #     path: user-registration
+      #     method: get
+      #     cors: true
+      - http: 
+          path: user-registration
+          method: post
+          cors: true
+      ###In the event we have front-end ability for users to update their account
+      ###For user deletions, my suggestion is always, add a 'status' to the user-DB that has true/false for active.
+      # - http:
+      #     path: user-registration/{userId}
+      #     method: put
+      #     cors: true
   recipes:
     handler: recipes.handler
     events:
