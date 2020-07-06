@@ -13,30 +13,35 @@ app.use(bodyParser.json());
 
 
 const connection = mysql.createConnection({
-  host: "appimeals-db.capjtotdxdxl.eu-west-2.rds.amazonaws.com",
-  user: "root",
-  password: "t9&jlnePhi_r",
-  database: "recipes"
-});
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: "appiMeals"
+})
 
-/*
-
-Jennifer Calland: TBF, I don't think we should be responsible for keeping Spoonacular's recipes in our database
-
-I think we need our 'appiMeals' MySQL database on our AWS, and otherwise let Spoonacular keep 
-their own database that we link through via recipe DBIDs.  And feel free to remove this 
-comment once its read and acknowledged
-
-Also-- aside--- 'steamed oats'  ... just what have you been eating lately???? ;-P
-
-*/
 
 app.get("/browse-recipes", function(req, res) {
 
-  axios.get(`https://api.spoonacular.com/recipes/random?number=2&tags=vegetarian,dessert&apiKey=5059b8d98fa64de5b6da983974896a37`)
-    .then(function (response) {
-      // handle success
-      res.json(response.data)
+  axios.get(`https://api.edamam.com/search?q=chicken&app_id=fce15b25&app_key=8b32dc22c438268e5fc874e29967d9fa&from=0&to=10&calories=591-722`)
+    .then(response => {
+      //creating a variable to store the API response(JSON)
+      const recipesArray = [];
+      //accessing the data attribute inside the response
+      response.data.hits.map(recipe => {
+        recipesArray.push(recipe);
+      });
+
+      if(error) {
+        console.log("Error fetching recipes", error);
+        res.status(500).json({
+          error: error
+        });
+      } else {
+        res.status(200).json({
+          recipesArray
+        });
+      }
+      
     })
     .catch(function (error) {
       // handle error
@@ -45,8 +50,7 @@ app.get("/browse-recipes", function(req, res) {
     })
 })
 
-app.listen(8900, () => {
-  console.log("App starting port ", 8900);
-});
+
+app.listen(3009);
 
 module.exports.handler = serverless(app);
