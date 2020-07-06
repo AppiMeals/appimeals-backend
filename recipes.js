@@ -3,18 +3,21 @@ const serverless = require("serverless-http");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
-
+const axios = require('axios');
 const app = express();
 
+
+app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
-// const connection = mysql.createConnection({
-//   host: process.env.DB_HOST,
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD,
-//   database: "recipes"
-// });
+
+const connection = mysql.createConnection({
+  host: "appimeals-db.capjtotdxdxl.eu-west-2.rds.amazonaws.com",
+  user: "root",
+  password: "t9&jlnePhi_r",
+  database: "recipes"
+});
 
 /*
 
@@ -29,7 +32,21 @@ Also-- aside--- 'steamed oats'  ... just what have you been eating lately???? ;-
 */
 
 app.get("/browse-recipes", function(req, res) {
-  res.send({ recipe: ["burned chicken", "fish of chips", "steamed oats"] });
+
+  axios.get(`https://api.spoonacular.com/recipes/random?number=2&tags=vegetarian,dessert&apiKey=5059b8d98fa64de5b6da983974896a37`)
+    .then(function (response) {
+      // handle success
+      res.json(response.data)
+    })
+    .catch(function (error) {
+      // handle error
+      console.error(error);
+      res.status(500).json({error})
+    })
+})
+
+app.listen(8900, () => {
+  console.log("App starting port ", 8900);
 });
 
 module.exports.handler = serverless(app);

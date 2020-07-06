@@ -1,0 +1,285 @@
+{
+  "canvas": {
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 43,
+    "scrollLeft": 0,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": true,
+      "columnPrimaryKey": true,
+      "columnUnique": true,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "appiMeals",
+    "canvasType": "SQL",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    }
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "mealSelections",
+        "comment": "Table that holds user's next 7 Meal Selections",
+        "columns": [
+          {
+            "name": "myMeals_dbid",
+            "comment": "DBID for the selection",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": true,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 86,
+              "widthComment": 128,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "15a67c27-50d0-441e-b96d-9cefb1394f5f"
+          },
+          {
+            "name": "user_dbid",
+            "comment": "Foreign Key to User's Table",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": true,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 161,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "51b6431f-c95d-97a7-ff46-3fb840f457fe"
+          },
+          {
+            "name": "mealsString",
+            "comment": "Comma spearated string that represents the recipe DBID from Spoonacular, max 7 meals",
+            "dataType": "VARCHAR",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71,
+              "widthComment": 516,
+              "widthDataType": 65,
+              "widthDefault": 60
+            },
+            "id": "43270920-c6f1-f924-33a5-448e0e3d1921"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1074,
+          "top": 143,
+          "zIndex": 537,
+          "widthName": 90,
+          "widthComment": 265
+        },
+        "id": "21c3f9b9-0466-8715-e5ea-cf915edb59f3"
+      },
+      {
+        "name": "recipes",
+        "comment": "",
+        "columns": [
+          {
+            "name": "recipe_id",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5fdc1660-d00f-dbb5-ddf8-eb8aeaa0ee3c"
+          },
+          {
+            "name": "recipe_title",
+            "comment": "",
+            "dataType": "VARCHAR(255)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 65,
+              "widthComment": 60,
+              "widthDataType": 95,
+              "widthDefault": 60
+            },
+            "id": "f869aa1f-2f7f-4367-92a4-61b8dae0b5bb"
+          },
+          {
+            "name": "recipe_summary",
+            "comment": "",
+            "dataType": "VARCHAR(255)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 98,
+              "widthComment": 60,
+              "widthDataType": 95,
+              "widthDefault": 60
+            },
+            "id": "e0d34ab9-3665-19fb-17a1-ca7b28dede7f"
+          },
+          {
+            "name": "recipe_cook",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "deabb2de-4711-7034-a94a-0f5b3b6ff87e"
+          },
+          {
+            "name": "recipe_servings",
+            "comment": "",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 93,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "dd3f42a5-4c67-0f34-030b-a7fc7ebe03f8"
+          },
+          {
+            "name": "recipe_image",
+            "comment": "",
+            "dataType": "VARCHAR(255)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 80,
+              "widthComment": 60,
+              "widthDataType": 95,
+              "widthDefault": 60
+            },
+            "id": "fdb06fb3-43e3-b666-61fb-adab0ab3b278"
+          }
+        ],
+        "ui": {
+          "active": true,
+          "left": 172,
+          "top": 309,
+          "zIndex": 685,
+          "widthName": 60,
+          "widthComment": 60
+        },
+        "id": "a8cc7eec-db4f-e575-5119-6cba0de5aaac"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": []
+  }
+}
