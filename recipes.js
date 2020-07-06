@@ -20,37 +20,19 @@ const connection = mysql.createConnection({
 })
 
 
-app.get("/browse-recipes", function(req, res) {
+app.get("/browse-recipes", function (req, res) {
 
   axios.get(`https://api.edamam.com/search?q=chicken&app_id=fce15b25&app_key=8b32dc22c438268e5fc874e29967d9fa&from=0&to=10&calories=591-722`)
-    .then(response => {
-      //creating a variable to store the API response(JSON)
-      const recipesArray = [];
-      //accessing the data attribute inside the response
-      response.data.hits.map(recipe => {
-        recipesArray.push(recipe);
-      });
-
-      if(error) {
-        console.log("Error fetching recipes", error);
-        res.status(500).json({
-          error: error
-        });
-      } else {
-        res.status(200).json({
-          recipesArray
-        });
-      }
-      
+    .then(function (response) {
+      //If request is successful
+      res.json(response.data)
     })
-    .catch(function (error) {
-      // handle error
-      console.error(error);
-      res.status(500).json({error})
-    })
-})
+  .catch(function (error) {
+    // handle error
+    console.error(error);
+    res.status(500).json({ error })
+  })
+});
 
-
-app.listen(3009);
 
 module.exports.handler = serverless(app);
