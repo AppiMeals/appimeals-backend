@@ -8,18 +8,26 @@ provider:
 functions:
   users:
     handler: users.handler
+    environment:
+        DB_HOST: ${opt:DB_HOST}
+        DB_USER: ${opt:DB_USER}
+        DB_PASSWORD: ${opt:DB_PASSWORD}
     events:
       - http: 
-          path: user-registration
+          path: users
           method: get
           cors: true
       - http: 
-          path: user-registration
+          path: users
           method: post
           cors: true
 
   favourites:
     handler: favourites.handler
+    environment:
+        DB_HOST: ${opt:DB_HOST}
+        DB_USER: ${opt:DB_USER}
+        DB_PASSWORD: ${opt:DB_PASSWORD}
     events:
       - http: 
           path: favourites
@@ -36,6 +44,10 @@ functions:
 
   mealPreferences:
     handler: mealPreferences.handler
+    environment:
+        DB_HOST: ${opt:DB_HOST}
+        DB_USER: ${opt:DB_USER}
+        DB_PASSWORD: ${opt:DB_PASSWORD}
     events:
       - http: 
           path: mealPreferences
@@ -52,6 +64,10 @@ functions:
 
   mealSelections:
     handler: mealSelections.handler
+    environment:
+        DB_HOST: ${opt:DB_HOST}
+        DB_USER: ${opt:DB_USER}
+        DB_PASSWORD: ${opt:DB_PASSWORD}
     events:
       - http: 
           path: mealSelections
@@ -68,6 +84,10 @@ functions:
 
   recipes:
     handler: recipes.handler
+    environment:
+        DB_HOST: ${opt:DB_HOST}
+        DB_USER: ${opt:DB_USER}
+        DB_PASSWORD: ${opt:DB_PASSWORD}
     events:
       - http:
           path: browse-recipes
