@@ -6,9 +6,9 @@ const mysql = require("mysql");
 
 const app = express();
 
+app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
-
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -28,10 +28,16 @@ Functions required for users table:
 */
 
 app.get("/users", function(req, res) {
+/*
+IMPORTANT NOTE: this returns an empty array of users if email/password 
+doesn't and need to figure out how to make that an error of sorts.
+
+
+*/
     // const query = "SELECT * FROM tasks";
     const query = "SELECT * FROM users WHERE ((users.email = ?) AND (users.password = ?)) LIMIT 1;";
     //connection.query(query, function(error, data) {
-      connection.query(query, req.query.email, req.query.password, function(error, data) {
+      connection.query(query, [req.body.email, req.body.password], function(error, data) {
       if(error) {
         console.log("Login Error", error);
         res.status(500).json({
@@ -64,4 +70,4 @@ app.get("/users", function(req, res) {
     });
   });
   
-  module.exports.handler = serverless(app);
+module.exports.handler = serverless(app);
