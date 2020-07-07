@@ -249,10 +249,10 @@
           }
         ],
         "ui": {
-          "active": true,
-          "left": 47,
-          "top": 130,
-          "zIndex": 557,
+          "active": false,
+          "left": 36,
+          "top": 98,
+          "zIndex": 558,
           "widthName": 60,
           "widthComment": 83
         },
@@ -333,10 +333,10 @@
           }
         ],
         "ui": {
-          "active": false,
-          "left": 1074,
-          "top": 143,
-          "zIndex": 537,
+          "active": true,
+          "left": 745,
+          "top": 396,
+          "zIndex": 577,
           "widthName": 90,
           "widthComment": 265
         },
@@ -395,7 +395,7 @@
           {
             "name": "recipe_id",
             "comment": "Links to the Recipe ID in Spoonacular",
-            "dataType": "INT",
+            "dataType": "VARCHAR(255)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -410,7 +410,7 @@
               "pfk": false,
               "widthName": 60,
               "widthComment": 220,
-              "widthDataType": 60,
+              "widthDataType": 95,
               "widthDefault": 60
             },
             "id": "f9c09f0e-96e8-affb-2291-1332b84b8baa"
@@ -418,9 +418,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 226,
-          "top": 574,
-          "zIndex": 539,
+          "left": 49,
+          "top": 594,
+          "zIndex": 567,
           "widthName": 60,
           "widthComment": 290
         },
@@ -571,9 +571,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 999,
-          "top": 451,
-          "zIndex": 538,
+          "left": 716,
+          "top": 572,
+          "zIndex": 576,
           "widthName": 100,
           "widthComment": 289
         },
@@ -594,8 +594,8 @@
           "columnIds": [
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
-          "x": 845,
-          "y": 193.375,
+          "x": 834,
+          "y": 224.75,
           "direction": "right"
         },
         "end": {
@@ -603,8 +603,8 @@
           "columnIds": [
             "51b6431f-c95d-97a7-ff46-3fb840f457fe"
           ],
-          "x": 1074,
-          "y": 208.25,
+          "x": 745,
+          "y": 461.25,
           "direction": "left"
         },
         "id": "58fc09e1-5bbb-6b09-b7b4-02b881dfd978",
@@ -617,8 +617,8 @@
           "columnIds": [
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
-          "x": 446,
-          "y": 383.5,
+          "x": 235.5,
+          "y": 351.5,
           "direction": "bottom"
         },
         "end": {
@@ -626,8 +626,8 @@
           "columnIds": [
             "76d5f0c4-f38b-c6d3-b533-e07094f0644c"
           ],
-          "x": 515,
-          "y": 574,
+          "x": 355.5,
+          "y": 594,
           "direction": "top"
         },
         "id": "fb583d53-c967-5423-aed1-8f0fa97d16ff",
@@ -640,17 +640,17 @@
           "columnIds": [
             "0f9c019f-c01f-3b8d-1606-39b1f631f966"
           ],
-          "x": 845,
-          "y": 320.125,
-          "direction": "right"
+          "x": 634.5,
+          "y": 351.5,
+          "direction": "bottom"
         },
         "end": {
           "tableId": "c13368eb-7e98-fff9-cd80-08815cdbd8c4",
           "columnIds": [
             "1934f83a-bd95-fb13-5495-4ca3d63a4533"
           ],
-          "x": 999,
-          "y": 547,
+          "x": 716,
+          "y": 668,
           "direction": "left"
         },
         "id": "1108b07b-d159-a51f-e427-32bc7b87b9a1",

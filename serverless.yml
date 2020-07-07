@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 service: appimeals-backend
 
+=======
+# Cross-Stack References in Serverless
+# https://serverless-stack.com/chapters/cross-stack-references-in-serverless.html
+# "...Now let’s look at how to work with multiple services in your Serverless application."
+
+service: appimeals-backend
+>>>>>>> 002-user-registration
 
 provider:
   name: aws
@@ -7,14 +15,9 @@ provider:
   region: eu-west-2
 
 functions:
-  user-registration:
-    handler: user-registration.handler
+  users:
+    handler: users.handler
     events:
-      ###In the event we depend on user-registration to report back account creation
-      # -http:
-      #     path: user-registration
-      #     method: get
-      #     cors: true
       - http: 
           path: user-registration
           method: post
