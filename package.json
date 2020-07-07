@@ -1,7 +1,6 @@
 {
   "name": "appimeals-backend",
   "version": "1.0.0",
-  "description": "",
   "main": "recipes.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,5 +16,15 @@
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "serverless-http": "^2.5.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AppiMeals/appimeals-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AppiMeals/appimeals-backend/issues"
+  },
+  "homepage": "https://github.com/AppiMeals/appimeals-backend#readme",
+  "description": ""
 }
