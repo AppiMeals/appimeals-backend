@@ -96,4 +96,4 @@ functions:
       - http:
           path: browse-recipes
           method: post
-          cors: true  
+          cors: true
