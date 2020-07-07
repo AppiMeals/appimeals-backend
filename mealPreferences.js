@@ -44,9 +44,9 @@ app.post("/mealPreferences", function(req, res) {
   });
 });
 
-app.get("/mealPreferences", function(req, res) {
+app.get("/mealPreferences/:user", function(req, res) {
   const query = "SELECT * FROM mealPreferences WHERE (mealPreferences.user_dbid = ?)";
-    connection.query(query, req.query.user_dbid, function(error, data) {
+    connection.query(query, req.params.user, function(error, data) {
     if(error) {
       console.log("Could not retrieve meal preferences", error);
       res.status(500).json({

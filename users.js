@@ -32,6 +32,8 @@ app.get("/users", function(req, res) {
 IMPORTANT NOTE: this returns an empty array of users if email/password 
 doesn't and need to figure out how to make that an error of sorts.
 
+GET ALSO APPEARS TO BE BUGGED ATM.
+
 
 */
     // const query = "SELECT * FROM tasks";

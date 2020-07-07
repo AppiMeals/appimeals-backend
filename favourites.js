@@ -23,6 +23,8 @@ Functions required for favourites table:
  - GET list of favourite recipes
  - DELETE a Favourite Recipe
 
+GET & DELETE ALSO APPEARS TO BE BUGGED ATM.
+
 */
 
 app.get("/favourites", function(req, res) {
