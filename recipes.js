@@ -4,7 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const axios = require('axios');
-require('dotenv').config()
+require('dotenv').config();
 
 const app = express();
 
@@ -22,9 +22,17 @@ const connection = mysql.createConnection({
 })
 
 
-app.get("/browse-recipes", function (req, res) {
 
-  axios.get(`https://api.edamam.com/search?q=chicken&app_id=fce15b25&app_key=8b32dc22c438268e5fc874e29967d9fa&from=0&to=10&calories=591-722`)
+//GET - Fill the page with recipes from Edamam
+
+//Still need to add filters to manipulate the query
+
+app.get("/browse-recipes/", function (req, res) {
+
+  //Taking the react GET request query input parameter and passing it to the back end.  
+  let searchQuery = req.query.input;
+
+  axios.get(`https://api.edamam.com/search?q=${searchQuery}&app_id=fce15b25&app_key=8b32dc22c438268e5fc874e29967d9fa&from=0&to=10&calories=591-722`)
     .then(function (response) {
       //Send the data(JSON) to the front end
       res.json(response.data)
@@ -36,17 +44,19 @@ app.get("/browse-recipes", function (req, res) {
   })
 });
 
-//POST// ADD TASK TO favourites TABLE
+//POST// ADD TASK TO mealSelections TABLE
 
 app.post("/browse-recipes", function(req, res) {
 
-  const query = "INSERT INTO favourites (user_dbid, recipe_id) VALUES (?, ?);";
+  const query = "INSERT INTO mealSelections (user_dbid, recipe_id, day, favourite) VALUES (?, ?, ?, ?);";
 
-  const querySelect = "SELECT * FROM favourites WHERE user_dbid = ?;";
+  const querySelect = "SELECT * FROM mealSelections WHERE user_dbid = ?;";
 
 
-  connection.query(query, [req.body.user_dbid, req.body.recipe_id], function(error, data){
+  connection.query(query, [req.body.user_dbid, req.body.recipe_id, req.body.favourite, req.body.day], function(error, data){
     if(error) {
+      console.log("can't push the data to db");
+
       console.log("Error handling tasks", error);
       res.status(500).json({
         error: error
@@ -54,6 +64,8 @@ app.post("/browse-recipes", function(req, res) {
     } else {
      connection.query(querySelect, [req.body.user_dbid], function(error, data){
        if(error) {
+        console.log("can't push the data to db");
+
         console.log("Error handling tasks", error);
         res.status(500).json({
           error: error
