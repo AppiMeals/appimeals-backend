@@ -3,8 +3,6 @@ const serverless = require("serverless-http");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
-require('dotenv').config();
-
 const app = express();
 
 app.use(cors());

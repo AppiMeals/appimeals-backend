@@ -4,8 +4,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const axios = require('axios');
-require('dotenv').config();
-
 const app = express();
 
 
@@ -55,8 +53,6 @@ app.post("/browse-recipes", function(req, res) {
 
   connection.query(query, [req.body.user_dbid, req.body.recipe_id, req.body.favourite, req.body.day], function(error, data){
     if(error) {
-      console.log("can't push the data to db");
-
       console.log("Error handling tasks", error);
       res.status(500).json({
         error: error
@@ -64,8 +60,6 @@ app.post("/browse-recipes", function(req, res) {
     } else {
      connection.query(querySelect, [req.body.user_dbid], function(error, data){
        if(error) {
-        console.log("can't push the data to db");
-
         console.log("Error handling tasks", error);
         res.status(500).json({
           error: error
