@@ -19,7 +19,12 @@ const connection = mysql.createConnection({
   database: "appiMeals"
 })
 
-
+// const connection = mysql.createConnection({
+//   host: "recipes.capjtotdxdxl.eu-west-2.rds.amazonaws.com",
+//   user: "root",
+//   password: "12345Abcd!",
+//   database: "appiMeals"
+// })
 
 //GET - Fill the page with recipes from Edamam
 
@@ -48,7 +53,7 @@ app.post("/browse-recipes", function(req, res) {
 
   const query = "INSERT INTO mealSelections (user_dbid, recipe_id, day, favourite) VALUES (?, ?, ?, ?);";
 
-  const querySelect = "SELECT * FROM mealSelections WHERE user_dbid = ?;";
+  const querySelect = "SELECT * FROM mealSelections";
 
 
   connection.query(query, [req.body.user_dbid, req.body.recipe_id, req.body.favourite, req.body.day], function(error, data){
@@ -66,11 +71,10 @@ app.post("/browse-recipes", function(req, res) {
         });
        } else {
          res.status(201).json({
-          data
+          user_dbid: data
          });
        }
      });
-     
     }
   });
 });
