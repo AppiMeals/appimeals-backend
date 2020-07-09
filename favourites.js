@@ -9,23 +9,12 @@ app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
 
-
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: "appiMeals"
 })
-
-/*
-Functions required for favourites table:
- - POST a new Favourite Recipe
- - GET list of favourite recipes
- - DELETE a Favourite Recipe
-
-GET & DELETE ALSO APPEARS TO BE BUGGED ATM.
-
-*/
 
 app.get("/favourites", function(req, res) {
   const query = "SELECT * FROM favourites WHERE (favourites.user_dbid = ?)";

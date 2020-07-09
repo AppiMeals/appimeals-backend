@@ -16,20 +16,8 @@ const connection = mysql.createConnection({
   database: "appiMeals"
 })
 
-/*
-Functions required for users table:
- - POST a new user account
- - GET a user's details if the username/password matches
- 
- I'm not going to worry about Users updating their information
- or deleting their account as its not part of MVP
-
-*/
-
-app.get("/users", function(req, res) {
-    //const query = "SELECT * FROM users";
+app.get("/users/", function(req, res) {
     const query = "SELECT * FROM `users` WHERE ((`users`.`email` = ?) AND (`users`.`password` = ?)) LIMIT 1";
-    //connection.query(query, function(error, data) {
       connection.query(query, [req.body.email, req.body.password], function(error,data) {
       if(error) {
         console.log("Login Error", error);
@@ -44,8 +32,7 @@ app.get("/users", function(req, res) {
     });
   });
   
-  app.post("/users", function(req, res) {
-      //const query = "INSERT INTO `users` VALUES ('', ?, ?, ?, ?)";
+  app.post("/users/", function(req, res) {
       const query = "INSERT INTO `users` (user_dbid, firstName, surname, email, password) VALUES ('', ?, ?, ?, ?)";
       connection.query(query, [req.body.firstName, req.body.surname, req.body.email, req.body.password], function(error,data) {
       if (error){
