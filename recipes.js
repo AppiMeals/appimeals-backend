@@ -19,13 +19,6 @@ const connection = mysql.createConnection({
   database: "appiMeals"
 })
 
-// const connection = mysql.createConnection({
-//   host: "recipes.capjtotdxdxl.eu-west-2.rds.amazonaws.com",
-//   user: "root",
-//   password: "12345Abcd!",
-//   database: "appiMeals"
-// })
-
 //GET - Fill the page with recipes from Edamam
 
 //Still need to add filters to manipulate the query
