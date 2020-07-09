@@ -29,6 +29,9 @@ Functions required for mealSelections table:
 
 app.post("/mealSelections", function(req, res) {
   const query = "INSERT INTO `mealSelections` VALUES ('', ?, ?)";
+
+
+
   connection.query(query, [req.body.user_dbid, req.body.meals], function(error,data) {
     if (error){
         console.log("Could not save your meal selections", error);

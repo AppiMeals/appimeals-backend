@@ -61,7 +61,6 @@ app.get("/mealPreferences/:user", function(req, res) {
 
 app.put("/mealPreferences/:user_dbid", function(req, res) {
   const query = "UPDATE `mealPreferences` SET `mealPreferences`.`diet` = ?, `mealPreferences`.`exclusions` = ?, `mealPreferences`.`calories_min` = ?, `mealPreferences`.`calories_max` = ? WHERE (`mealPreferences`.`user_dbid` = ?)";
-  
   connection.query(query,[req.body.diet, req.body.exclusions, req.body.calories_min, req.body.calories_max, req.params.user_dbid], function (error){
     if (error){
       console.log("Error updating your meal preferences", error);

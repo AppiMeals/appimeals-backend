@@ -3,7 +3,6 @@ const serverless = require("serverless-http");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mysql = require("mysql");
-
 const app = express();
 
 app.use(express.json());
@@ -28,18 +27,10 @@ Functions required for users table:
 */
 
 app.get("/users", function(req, res) {
-/*
-IMPORTANT NOTE: this returns an empty array of users if email/password 
-doesn't and need to figure out how to make that an error of sorts.
-
-GET ALSO APPEARS TO BE BUGGED ATM.
-
-
-*/
-    // const query = "SELECT * FROM tasks";
-    const query = "SELECT * FROM users WHERE ((users.email = ?) AND (users.password = ?)) LIMIT 1;";
+    //const query = "SELECT * FROM users";
+    const query = "SELECT * FROM `users` WHERE ((`users`.`email` = ?) AND (`users`.`password` = ?)) LIMIT 1";
     //connection.query(query, function(error, data) {
-      connection.query(query, [req.body.email, req.body.password], function(error, data) {
+      connection.query(query, [req.body.email, req.body.password], function(error,data) {
       if(error) {
         console.log("Login Error", error);
         res.status(500).json({
@@ -47,17 +38,16 @@ GET ALSO APPEARS TO BE BUGGED ATM.
         });
       } else {
         res.status(200).json({
-          users: data
+          email: data
         });
       }
     });
   });
   
   app.post("/users", function(req, res) {
-  
-    const query = "INSERT INTO `users` VALUES ('', ?, ?, ?, ?)";
-  
-    connection.query(query, [req.body.firstName, req.body.surname, req.body.email, req.body.password], function(error,data) {
+      //const query = "INSERT INTO `users` VALUES ('', ?, ?, ?, ?)";
+      const query = "INSERT INTO `users` (user_dbid, firstName, surname, email, password) VALUES ('', ?, ?, ?, ?)";
+      connection.query(query, [req.body.firstName, req.body.surname, req.body.email, req.body.password], function(error,data) {
       if (error){
           console.log("Registration Error", error);
           res.status(500).json({
