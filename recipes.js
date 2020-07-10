@@ -27,8 +27,9 @@ app.get("/browse-recipes/", function (req, res) {
 
   //Taking the react GET request query input parameter and passing it to the back end.  
   let searchQuery = req.query.input;
+  let dietChoice = req.query.dietInput;
 
-  axios.get(`https://api.edamam.com/search?q=${searchQuery}&app_id=fce15b25&app_key=8b32dc22c438268e5fc874e29967d9fa&from=0&to=10&calories=591-722`)
+  axios.get(`https://api.edamam.com/search?q=${searchQuery}&app_id=fce15b25&app_key=8b32dc22c438268e5fc874e29967d9fa&from=0&to=9&diet=${dietChoice}`)
     .then(function (response) {
       //Send the data(JSON) to the front end
       res.json(response.data)
@@ -44,12 +45,23 @@ app.get("/browse-recipes/", function (req, res) {
 
 app.post("/browse-recipes", function(req, res) {
 
-  const query = "INSERT INTO mealSelections (user_dbid, recipe_id, day, favourite) VALUES (?, ?, ?, ?);";
+  const query = "INSERT INTO recipesData (user_dbid, recipe_uri, recipe_day, recipe_title, recipe_yield, recipe_image, recipe_diet, recipe_calories, recipe_ingredients, recipe_time, recipe_nutrients, recipe_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
-  const querySelect = "SELECT * FROM mealSelections";
+  const querySelect = "SELECT * FROM recipesData WHERE user_dbid = ?;";
 
 
-  connection.query(query, [req.body.user_dbid, req.body.recipe_id, req.body.favourite, req.body.day], function(error, data){
+  connection.query(query, [req.body.user_dbid, 
+                           req.body.recipe_uri, 
+                           req.body.recipe_day, 
+                           req.body.recipe_title, 
+                           req.body.recipe_yield, 
+                           req.body.recipe_image, 
+                           req.body.recipe_diet, 
+                           req.body.recipe_calories, 
+                           req.body.recipe_ingredients, 
+                           req.body.recipe_time, 
+                           req.body.recipe_nutrients, 
+                           req.body.recipe_url], function(error, data){
     if(error) {
       console.log("Error handling tasks", error);
       res.status(500).json({
@@ -71,5 +83,6 @@ app.post("/browse-recipes", function(req, res) {
     }
   });
 });
+
 
 module.exports.handler = serverless(app);
