@@ -259,7 +259,7 @@
         "id": "6c252f2b-4072-b68f-ab67-b1e5efa42f2d"
       },
       {
-        "name": "recipeData",
+        "name": "recipesData",
         "comment": "",
         "columns": [
           {
@@ -316,7 +316,7 @@
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
-              "unique": false,
+              "unique": true,
               "notNull": true
             },
             "ui": {
@@ -586,11 +586,11 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 1021,
           "top": 315,
-          "zIndex": 820,
-          "widthName": 65,
+          "zIndex": 826,
+          "widthName": 71,
           "widthComment": 60
         },
         "id": "21c3f9b9-0466-8715-e5ea-cf915edb59f3"
