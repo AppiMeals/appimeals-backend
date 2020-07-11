@@ -38,5 +38,21 @@ app.get("/MyMealChoices", function(req, res) {
     });
 });
 
+//DELETE-RECIPE
+app.delete("/MyMealChoices/:recipeId", function(req, res) {
+    const id = req.params.recipeId;
+    const query = "DELETE FROM recipesData WHERE recipe_id = ?;";
+    connection.query(query, id, function(error, data){
+      if(error) {
+        console.log("Error handling tasks", error);
+        res.status(404).json({
+          error: error
+        });
+      } else {
+        res.status(200);
+      }
+    });
+  });
+
 
 module.exports.handler = serverless(app);
