@@ -90,9 +90,10 @@ functions:
           method: get
           cors: true
       - http:
-           path: MyMealChoices
-           method: delete
-           cors: true
+          path: MyMealChoices/{recipeId}
+          method: delete
+          cors: true
+
    
     
           
