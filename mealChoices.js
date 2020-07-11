@@ -41,13 +41,13 @@ app.get("/MyMealChoices", function(req, res) {
 //DELETE-RECIPE
 app.delete("/MyMealChoices/:recipeId", function(req, res) {
     const id = req.params.recipeId;
-    const query = "DELETE FROM recipesData WHERE recipe_id = ?;";
-    connection.query(query, id, function(error, data){
+
+    const query = "DELETE FROM recipesData WHERE recipe_uri = ?;";
+
+    connection.query(query, [id], function(error, data){
       if(error) {
-        console.log("Error handling tasks", error);
-        res.status(404).json({
-          error: error
-        });
+        console.log("Error handling request", error);
+        res.status(404).json({ error });
       } else {
         res.status(200);
       }

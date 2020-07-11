@@ -36,50 +36,43 @@ app.get("/browse-recipes/", function (req, res) {
     })
   .catch(function (error) {
     // handle error
-    console.error(error);
     res.status(500).json({ error })
   })
 });
 
-//POST// ADD TASK TO mealSelections TABLE
+//POST// ADD TASKS TO recipesData TABLE
 
-app.post("/browse-recipes", function(req, res) {
+app.post("/browse-recipes", function (req, res) {
 
   const query = "INSERT INTO recipesData (user_dbid, recipe_uri, recipe_day, recipe_title, recipe_yield, recipe_image, recipe_diet, recipe_calories, recipe_ingredients, recipe_time, recipe_nutrients, recipe_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
   const querySelect = "SELECT * FROM recipesData WHERE user_dbid = ?;";
 
 
-  connection.query(query, [req.body.user_dbid, 
-                           req.body.recipe_uri, 
-                           req.body.recipe_day, 
-                           req.body.recipe_title, 
-                           req.body.recipe_yield, 
-                           req.body.recipe_image, 
-                           req.body.recipe_diet, 
-                           req.body.recipe_calories, 
-                           req.body.recipe_ingredients, 
-                           req.body.recipe_time, 
-                           req.body.recipe_nutrients, 
-                           req.body.recipe_url], function(error, data){
-    if(error) {
-      console.log("Error handling tasks", error);
-      res.status(500).json({
-        error: error
-      });
+  connection.query(query, [req.body.user_dbid,
+  req.body.recipe_uri,
+  req.body.recipe_day,
+  req.body.recipe_title,
+  req.body.recipe_yield,
+  req.body.recipe_image,
+  req.body.recipe_diet,
+  req.body.recipe_calories,
+  req.body.recipe_ingredients,
+  req.body.recipe_time,
+  req.body.recipe_nutrients,
+  req.body.recipe_url], function (error, data) {
+    if (error) {
+      res.status(500).json({ error });
     } else {
-     connection.query(querySelect, [req.body.user_dbid], function(error, data){
-       if(error) {
-        console.log("Error handling tasks", error);
-        res.status(500).json({
-          error: error
-        });
-       } else {
-         res.status(201).json({
-          user_dbid: data
-         });
-       }
-     });
+      connection.query(querySelect, [req.body.user_dbid], function (error, data) {
+        if (error) {
+          res.status(500).json({ error });
+        } else {
+          res.status(201).json({
+            user_dbid: data
+          });
+        }
+      });
     }
   });
 });

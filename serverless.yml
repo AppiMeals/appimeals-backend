@@ -89,6 +89,10 @@ functions:
           path: MyMealChoices
           method: get
           cors: true
+      - http:
+           path: MyMealChoices
+           method: delete
+           cors: true
    
     
           
